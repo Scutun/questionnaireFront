@@ -1,0 +1,79 @@
+.nextPageBtns{
+    border-radius: 19px 19px 19px 19px;
+    width: 340px;
+    display: flex;
+}
+
+.pageBtn{
+    font-size: 20px;
+    margin-left: 5px;
+    height: 38px;
+    width: 38px;
+    border-radius: 19px;
+    border-color: #1B31F4;
+    background-color: white;
+    box-shadow: 2px 4px 5px gray;
+    color: black;
+    text-align: center;
+}
+
+.nextBtn{
+    font-size: 20px;
+    margin-left: 5px;
+    padding-top: 5px;
+    height: 38px;
+    width: 80px;
+    border-color: #1B31F4;
+    border-radius: 19px;
+    background-color: white;
+    box-shadow: 2px 4px 5px gray;
+    color: black;
+    text-align: center;
+}
+
+div.nextPageBtns:hover .pageBtn:not(:hover){
+    opacity: 0.7;
+    transform: scale(0.85);
+}
+
+div.nextPageBtns:hover .nextBtn:not(:hover){
+    opacity: 0.7;
+    transform: scale(0.85);
+}
+
+.selectedBtn{
+    margin: 20px;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px 30px 30px 30px;
+    border-color: #1B31F4;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 6px 3px gainsboro;
+}
+
+.aproveBtn{
+    margin: 20px;
+    width: 291px;
+    height: 47px;
+    text-align: center;
+    padding: 8px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: #1B31F4;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 6px 3px gainsboro;
+}
+
+.selectedBtn:hover , .aproveBtn:hover , .pageBtn:hover{
+    background-color: #1B31F4;
+    color: white;
+    transition: 0.5s;
+}
+
+.nextBtn:hover{
+    transition: 0.5s;
+}
+
