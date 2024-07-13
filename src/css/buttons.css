@@ -1,7 +1,7 @@
 .pageBtns{
     border-radius: 19px;
     display: flex;
-    gap: 20px;
+    gap: 12px;
     max-width: 428px;
 }
 
@@ -38,7 +38,7 @@ svg *[stroke] { stroke: currentColor}
 }
 
 .selectedBtn{
-    padding: 5px 15px;
+    padding: 9px 15px;
     font-size: 18px;
     border-radius: 30px;
     border: 2px solid #1B31F4;
@@ -47,12 +47,14 @@ svg *[stroke] { stroke: currentColor}
     box-shadow: 2px 6px 3px gainsboro;
     transition: .3s all ease-in-out;
     cursor: pointer;
+    line-height: 18px;
+    min-width: 320px;
 }
 
 .aproveBtn{
     font-size: 18px;
-    padding: 18px 100px;
-    border-radius: 10px;
+    padding: 13px 100px;
+    border-radius: 15px;
     border: 2px solid #1B31F4;
     background-color: white;
     color: black;
@@ -60,6 +62,7 @@ svg *[stroke] { stroke: currentColor}
     transition: .3s all ease-in-out;
     min-width: 280px;
     cursor: pointer;
+    line-height: 18px;
 }
 
 .selectedBtn:hover , .aproveBtn:hover , .pageBtn:hover, .nextBtn:hover{
