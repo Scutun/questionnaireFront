@@ -1,0 +1,13 @@
+.main {
+    background-color: #222222;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1280px;
+    background-color: white;
+}

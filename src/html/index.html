@@ -4,9 +4,48 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/styles/styles.css" />
     </head>
     <body>
         @@include('blocks/header.html')
+        <main class="main">
+            <div class="main-content">
+                <div>
+                    <button class="selectedBtn">Текст</button>
+                </div>
+                <div>
+                    <button class="aproveBtn">Teкст</button>
+                </div>
+                <div>
+                <div class="pageBtns">
+                    <button class="pageBtn">1</button>
+                    <button class="pageBtn">2</button>
+                    <button class="pageBtn">3</button>
+                    <button class="pageBtn">4</button>
+                    <button class="pageBtn">5</button>
+                    <button class="pageBtn">6</button>
+                    <button class="nextBtn">
+                        @@include('./blocks/svg-arrow.html')
+                    </button>
+                </div>
+                <div class="radio-btns">
+                    <p class="radio-btn">
+                        <input type="radio" id="radio-yes" name="radio-yes-no" value="1">
+                        <label for="radio-yes">Да</label>
+                    </p>
+                    <p class="radio-btn">
+                        <input type="radio" id="radio-no" name="radio-yes-no" value="0">
+                        <label for="radio-no">Нет</label>
+                    </p>
+                    <p class="radio-btn">
+                        <input type="radio" id="radio-ds" name="radio-yes-no" value="2">
+                        <label for="radio-ds">Не знаю</label>
+                    </p>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
