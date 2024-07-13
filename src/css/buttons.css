@@ -1,14 +1,15 @@
 .nextPageBtns{
     border-radius: 19px 19px 19px 19px;
-    width: 340px;
+    width: 360px;
     display: flex;
 }
 
 .pageBtn{
     font-size: 20px;
-    margin-left: 5px;
-    height: 38px;
+    margin-left: 8px;
     width: 38px;
+    height: 38px;
+    border-width: 2px;
     border-radius: 19px;
     border-color: #1B31F4;
     background-color: white;
@@ -42,7 +43,7 @@ div.nextPageBtns:hover .nextBtn:not(:hover){
 }
 
 .selectedBtn{
-    margin: 20px;
+    margin: 8px 8px 8px 8px;
     width: 320px;
     height: 40px;
     text-align: center;
@@ -69,11 +70,43 @@ div.nextPageBtns:hover .nextBtn:not(:hover){
 
 .selectedBtn:hover , .aproveBtn:hover , .pageBtn:hover{
     background-color: #1B31F4;
-    color: white;
+    color: white;   
     transition: 0.5s;
 }
 
+.pageBtn:not(:hover),.aproveBtn:not(:hover),.nextBtn:not(:hover),.selectedBtn:not(:hover){
+    transition: 0.5s;
+}
 .nextBtn:hover{
     transition: 0.5s;
 }
 
+.radio-btn {
+	display: inline-block;
+	margin-right: 10px;
+}
+.radio-btn input[type=radio] {
+	display: none;
+}
+.radio-btn label {
+	display: inline-block;
+	padding: 0px 15px;
+	line-height: 34px;
+    border-radius: 30px;
+	border: 2px solid #1B31F4;
+	user-select: none;
+    transition: .5s;
+    box-shadow: 2px 6px 3px gainsboro;
+}
+ 
+.radio-btn input[type=radio]:checked + label {
+	background: #1B31F4;
+    color: white;
+}
+ 
+.radio-btn label:hover {
+	color: white;
+    /* 5F7CF9 */
+    background-color: #1B31F4;
+    transition: .5s;
+}
