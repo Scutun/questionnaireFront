@@ -2,6 +2,7 @@
     border-radius: 19px;
     display: flex;
     gap: 20px;
+    max-width: 428px;
 }
 
 /*Кнопки*/
@@ -15,11 +16,13 @@
     box-shadow: 2px 4px 5px gray;
     color: black;
     text-align: center;
-    transition: .5s all ease-in-out;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
 }
 
 svg *[fill] { fill:currentColor}
 svg *[stroke] { stroke: currentColor}
+
 .nextBtn{
     font-size: 20px;
     margin-left: 5px;
@@ -30,32 +33,33 @@ svg *[stroke] { stroke: currentColor}
     border-radius: 19px;
     background-color: white;
     box-shadow: 2px 4px 5px gray;
-    text-align: center;
-    transition: .5s all ease-in-out;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
 }
 
 .selectedBtn{
     padding: 5px 15px;
     font-size: 18px;
-    text-align: center;
     border-radius: 30px;
     border: 2px solid #1B31F4;
     background-color: white;
     color: black;
     box-shadow: 2px 6px 3px gainsboro;
-    transition: .5s all ease-in-out;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
 }
 
 .aproveBtn{
     font-size: 18px;
-    padding: 5px 30px;
-    text-align: center;
+    padding: 18px 100px;
     border-radius: 10px;
     border: 2px solid #1B31F4;
     background-color: white;
     color: black;
     box-shadow: 2px 6px 3px gainsboro;
-    transition: .5s all ease-in-out;
+    transition: .3s all ease-in-out;
+    min-width: 280px;
+    cursor: pointer;
 }
 
 .selectedBtn:hover , .aproveBtn:hover , .pageBtn:hover, .nextBtn:hover{
@@ -93,8 +97,9 @@ svg *[stroke] { stroke: currentColor}
 	font-size: 18px;
     border-radius: 30px;
 	border: 2px solid #1B31F4;
-    transition: .5s all ease-in-out;
+    transition: .3s all ease-in-out;
     box-shadow: 2px 6px 3px gainsboro;
+    cursor: pointer;
 }
  
 .radio-btn input[type=radio]:checked + label {
