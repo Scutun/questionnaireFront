@@ -1,0 +1,29 @@
+.admin-page-content{
+    display: wrap;
+    justify-content: center;
+    padding: 40px 40px;
+    background:rgb(215, 215, 234);
+    max-width: 540px;
+    border-radius: 20px;
+    min-height: 456px;
+    min-width: 538;
+
+}
+.admin-email,.admin-password{
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 140px;
+    box-shadow: 2px 4px 12px gray;
+    font-size: 16px;
+    margin-bottom:60px ;
+}
+.aproveBtn.admin{
+    padding: 25px 0px;
+    box-shadow: 2px 4px 12px gray;
+}
+.admin-page-main{
+    display: flex;
+    justify-content: center;
+    
+}
