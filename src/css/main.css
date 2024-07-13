@@ -3,12 +3,13 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    z-index: -1;
     justify-content: center;
 }
 
 .main-content {
+    width: 100%;
     max-width: 1280px;
-    width: calc(0.7*100vw);
     background-color: white;
     z-index: 1;
     position: relative;

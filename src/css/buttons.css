@@ -1,101 +1,99 @@
-.nextPageBtns{
-    border-radius: 19px 19px 19px 19px;
-    width: 360px;
+.pageBtns{
+    border-radius: 19px;
     display: flex;
+    gap: 20px;
 }
 
+/*Кнопки*/
 .pageBtn{
-    font-size: 20px;
-    margin-left: 8px;
-    width: 38px;
+    font-size: 18px;
     height: 38px;
-    border-width: 2px;
-    border-radius: 19px;
-    border-color: #1B31F4;
+    width: 38px;
+    border-radius: 50%;
+    border: 2px solid #1B31F4;
     background-color: white;
     box-shadow: 2px 4px 5px gray;
     color: black;
     text-align: center;
+    transition: .5s all ease-in-out;
 }
 
+svg *[fill] { fill:currentColor}
+svg *[stroke] { stroke: currentColor}
 .nextBtn{
     font-size: 20px;
     margin-left: 5px;
-    padding-top: 5px;
-    height: 38px;
-    width: 80px;
-    border-color: #1B31F4;
+    padding: 0px 15px;
+    padding-top: 4px;
+    color: #1B31F4;
+    border: 2px solid #1B31F4;
     border-radius: 19px;
     background-color: white;
     box-shadow: 2px 4px 5px gray;
-    color: black;
     text-align: center;
-}
-
-div.nextPageBtns:hover .pageBtn:not(:hover){
-    opacity: 0.7;
-    transform: scale(0.85);
-}
-
-div.nextPageBtns:hover .nextBtn:not(:hover){
-    opacity: 0.7;
-    transform: scale(0.85);
+    transition: .5s all ease-in-out;
 }
 
 .selectedBtn{
-    margin: 8px 8px 8px 8px;
-    width: 320px;
-    height: 40px;
+    padding: 5px 15px;
+    font-size: 18px;
     text-align: center;
-    padding: 10px 10px 10px 10px;
-    border-radius: 30px 30px 30px 30px;
-    border-color: #1B31F4;
+    border-radius: 30px;
+    border: 2px solid #1B31F4;
     background-color: white;
     color: black;
     box-shadow: 2px 6px 3px gainsboro;
+    transition: .5s all ease-in-out;
 }
 
 .aproveBtn{
-    margin: 20px;
-    width: 291px;
-    height: 47px;
+    font-size: 18px;
+    padding: 5px 30px;
     text-align: center;
-    padding: 8px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
-    border-color: #1B31F4;
+    border-radius: 10px;
+    border: 2px solid #1B31F4;
     background-color: white;
     color: black;
     box-shadow: 2px 6px 3px gainsboro;
+    transition: .5s all ease-in-out;
 }
 
-.selectedBtn:hover , .aproveBtn:hover , .pageBtn:hover{
+.selectedBtn:hover , .aproveBtn:hover , .pageBtn:hover, .nextBtn:hover{
     background-color: #1B31F4;
-    color: white;   
-    transition: 0.5s;
+    color: white;
 }
 
-.pageBtn:not(:hover),.aproveBtn:not(:hover),.nextBtn:not(:hover),.selectedBtn:not(:hover){
-    transition: 0.5s;
+.pageBtns:hover .pageBtn:not(:hover){
+    opacity: 0.7;
+    transform: scale(0.85);
 }
-.nextBtn:hover{
-    transition: 0.5s;
+
+.pageBtns:hover .nextBtn:not(:hover){
+    opacity: 0.7;
+    transform: scale(0.85);
+}
+
+/*радио*/
+.radio-btns{
+    display: flex;
+    gap: 12px;
 }
 
 .radio-btn {
 	display: inline-block;
-	margin-right: 10px;
 }
+
 .radio-btn input[type=radio] {
 	display: none;
 }
+
 .radio-btn label {
 	display: inline-block;
-	padding: 0px 15px;
-	line-height: 34px;
+	padding: 5px 20px;
+	font-size: 18px;
     border-radius: 30px;
 	border: 2px solid #1B31F4;
-	user-select: none;
-    transition: .5s;
+    transition: .5s all ease-in-out;
     box-shadow: 2px 6px 3px gainsboro;
 }
  
