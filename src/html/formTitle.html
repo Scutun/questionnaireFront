@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Оценка развития ребенка от 14 мес. дл 3,5 лет</title>
+</head>
+<body>
+    @@include('blocks/header.html')
+    <main class="main">
+        <div class="main-content">
+            <div class="que-header">Анкета</div>
+            <div class="que-content">
+                <label class="form-title-text">Фамилия ребенка:</label>
+                <input type="text" class="que-surname-input" id="surnameInput" required placeholder="Введите фамилию ребенка"/>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Имя ребенка:</label>
+                <input type="text" class="que-name-input" id="nameInput" required placeholder="Введите имя ребенка"/>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Дата рождения ребенка:</label>
+                <input type="text" placeholder="Введите дату рождения" required id="birthInput"/>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Дата заполнения листа:</label>
+                <input type="text" placeholder="Введите дату заполнения" required id="dateInput"/>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Пол ребенка:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-male" name="radio-sex">
+                    <label for="radio-male">М</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-female" name="radio-sex">
+                    <label for="radio-female">Ж</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Email:</label>
+                <input type="text" class="que-email-input" placeholder="Введите электронную почту" required id="emailInput"/>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Телефон:</label>
+                <input type="text" class="que-phone-input" placeholder="Введите номер телефона" required id="phoneInput"/>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Кто заполняет тест:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mother" name="radio-who" value="1">
+                    <label for="radio-mother">мать</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-father" name="radio-who" value="2">
+                    <label for="radio-father">отец</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-grand" name="radio-who" value="3">
+                    <label for="radio-grand">бабушка</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-another" name="radio-who" value="4">
+                    <label for="radio-another">другой член семьи</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-teacher" name="radio-who" value="5">
+                    <label for="radio-teacher">няня, воспитатель и др.</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Неделя рождения ребенка:
+                <input type="text" class="que-week-input" required placeholder="Введите неделю рождения" id="weekInput"/>
+                 (норма = 40)
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Какие роды:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-normal" name="radio-which" value="1">
+                    <label for="radio-normal">нормальные</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-for-child" name="radio-which" value="2">
+                    <label for="radio-for-child">осложнения для ребенка</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-for-mother" name="radio-which" value="3">
+                    <label for="radio-for-mother">осложнения для матери</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-for-both" name="radio-which" value="4">
+                    <label for="radio-for-both">осложнения для обоих</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Состояние ребенка:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-healthy" name="radio-status" value="1">
+                    <label for="radio-healthy">здоров</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-healthy-after" name="radio-status" value="2">
+                    <label for="radio-healthy-after">полностью выздоровел после тяжелой болезни</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-weak-after" name="radio-status" value="3">
+                    <label for="radio-weak-after">ослаблен после тяжелой болезни</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-ill" name="radio-status" value="4">
+                    <label for="radio-ill">физически болен</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Бывают ли судороги:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-yes" name="radio-yes-no" value="0">
+                    <label for="radio-yes">Да</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-no" name="radio-yes-no" value="1">
+                    <label for="radio-no">Нет</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Где воспитывается ребенок:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-family" name="radio-where" value="1">
+                    <label for="radio-family">в семье</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-kindergarten" name="radio-where" value="2">
+                    <label for="radio-kindergarten">в семье и яслях/садике</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-everyday" name="radio-where" value="3">
+                    <label for="radio-everyday">в круглосуточных яслях</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-house" name="radio-where" value="4">
+                    <label for="radio-house">в дет. доме (доме ребенка)</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Язык общения в семье:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-russian" name="radio-language" value="1">
+                    <label for="radio-russian">только русский</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-another-lang" name="radio-language" value="2">
+                    <label for="radio-another-lang">русский и другой</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Количество детей в семье:</label>
+                <input type="text" class="que-children-amount" required placeholder="Введите количество детей" id="childrenInput"/>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Основной воспитатель ребенка:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mentor-mother" name="radio-mentor" value="1">
+                    <label for="radio-mentor-mother">мать</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mentor-father" name="radio-mentor" value="2">
+                    <label for="radio-mentor-father">отец</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mentor-grand" name="radio-mentor" value="3">
+                    <label for="radio-mentor-grand">бабушка</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mentor-teacher" name="radio-mentor" value="4">
+                    <label for="radio-mentor-teacher">няня, воспитатель и др.</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mentor-another" name="radio-mentor" value="5">
+                    <label for="radio-mentor-another">другой член семьи</label>
+                </div>
+            </div>
+            <div class="que-content line">
+                <div class="underdog">
+                    <label class="form-title-text">Обычное настроение воспитателя:</label>
+                    <label class="down">(выберите одно самое характерное)</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mood-cheerful" name="radio-mood" value="1">
+                    <label for="radio-mood-cheerful">бодрое</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mood-calm" name="radio-mood" value="2">
+                    <label for="radio-mood-calm">спокойное</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mood-irritated" name="radio-mood" value="3">
+                    <label for="radio-mood-irritated">раздраженное</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-mood-depressed" name="radio-mood" value="4">
+                    <label for="radio-mood-depressed">подавленное</label>
+                </div>
+            </div>
+            <div class="que-content line">
+                <div class="underdog">
+                    <label class="form-title-text">Что воспитатель ценит в ребенке</label>
+                    <label class="down">(выберите одно самое характерное)</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-obedience" name="radio-appreciate" value="1">
+                    <label for="radio-obedience">послушание</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-sociability" name="radio-appreciate" value="2">
+                    <label for="radio-sociability">общительность</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-curiosity" name="radio-appreciate" value="3">
+                    <label for="radio-curiosity">любопытство</label>
+                </div>
+            </div>
+            <div class="que-content">
+                <label class="form-title-text">Экономическое положение семьи:</label>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-good" name="radio-economic" value="1">
+                    <label for="radio-good">хорошее</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" id="radio-average" name="radio-economic" value="2">
+                    <label for="radio-average">среднее</label>
+                    <div class="radio-btn">
+                        <input type="radio" id="radio-bad" name="radio-economic" value="3">
+                        <label for="radio-bad">плохое</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="radio-very-bad" name="radio-economic" value="4">
+                        <label for="radio-very-bad">очень плохое</label>
+                    </div>
+                </div>
+            </div>
+            <div class="que-data-parent">
+
+            </div>
+            <div class="que-content">
+                <label>Мать</label>
+                <input type="text" required id="que-mother-age"/>
+                @@include('./blocks/select.html')
+            </div>
+            <div class="que-content">
+                <label>Отец</label>
+                <input type="text" required id="que-father-age"/>
+                @@include('./blocks/select.html')
+            </div>
+            <div class="que-content">
+                <label>Воспитатель</label>
+                <input type="text" required id="que-mentor-age"/>
+                @@include('./blocks/select.html')
+            </div>
+        </div>
+    </main>
+</body>
+</html>

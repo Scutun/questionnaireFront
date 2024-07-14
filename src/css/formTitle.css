@@ -1,0 +1,16 @@
+.que-header{
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    padding-top: 56px; 
+}
+
+.underdog{
+    display: flex;
+    flex-direction: column;
+}
+
+.que-content.line{
+    display: flex;
+    flex-direction: row;
+}
