@@ -8,20 +8,20 @@
 }
 
 .admin-login-content{
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     box-shadow: 2px 4px 16px rgb(202, 202, 202);
     border-radius: 15px;
     background-color: white;
     align-items: center;
     padding: 60px 41px;
     border: 2px solid #D6D6D6;
-
 }
 
 .admin-input{
     font-size: 15px;
     margin-bottom: 60px;
+    min-width: 398px;
     padding: 14px 26px;
     border: 2px solid #D6D6D6;
     border-radius: 15px;
@@ -33,10 +33,11 @@
 }
 
 .aproveBtn.admin{
-    border: 2px solid blue;
+    border: 2px solid #1B31F4;
     background-color: white;
     border-radius: 15px;
-    padding: 14px 204px;
+    min-width: 454px;
+    padding: 14px 26px;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     line-height: 40px;
@@ -45,4 +46,8 @@
 
 .admin-input:hover{
     opacity: 1;
+}
+
+.admin-input:focus{
+    border-color: #1B31F4;
 }
