@@ -41,7 +41,6 @@
     font-size: 22px;
     border: none;
     border-bottom: 1px ridge black;
-    outline: none;
     padding: 0px 20px;
 }
 
@@ -295,6 +294,6 @@
 }
 
 /*-------------------------------psevdo-------------------------------------*/
-.que-selector:focus, .radio-who:focus{
-    border-color: #1B31F4;
+.que-selector:focus, .radio-who:focus, .que-text-input{
+    outline-color:  #1B31F4;
 }
