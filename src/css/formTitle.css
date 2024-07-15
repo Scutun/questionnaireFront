@@ -1,3 +1,7 @@
+.main.form-title{
+    height: 100%;
+}
+
 .que-header{
     display: flex;
     justify-content: center;
@@ -42,6 +46,8 @@
     border: none;
     border-bottom: 1px ridge black;
     padding: 0px 20px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 40px;
 }
 
 .radio-who-btns{
@@ -195,8 +201,8 @@
 }
 
 .que-text-input.birth, .que-text-input.date{
-    max-width: 262px;
-    padding: 0px 10px;
+    min-width: 270px;
+    padding: 0px 0px;
 }
 
 .radio-btn.sex{
