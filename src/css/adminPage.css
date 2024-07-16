@@ -1,0 +1,87 @@
+.header.admin-header{
+    box-shadow: 0px 4px 3px #898C9E;
+    min-height: 167px;
+    justify-content: left;
+    padding-left: 20px;
+}
+
+.admim-main{
+    background-color: #ECECEC;
+    width: 100%;
+    height: 100%;
+
+}
+.admin-btn-after-head{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-left: 418px;
+    margin-right: 418px;
+    padding-top: 72px;
+    margin-bottom: 96px;
+   
+}
+.admin-main-content{
+    margin-left: 232px;
+    margin-right: 232px;
+    min-width: 1444px;
+    min-height: 940px;
+    padding-bottom: 135px;
+    background-color: white;
+    align-items: center;
+  padding: 0px 34px;
+    
+}
+.admin-page-aproveBtn{
+    font-size: 18px;
+    padding: 13px 100px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 5px 5px 0px #898C9E;
+    transition: .3s all ease-in-out;
+    min-width: 300px;
+    cursor: pointer;
+    line-height: 18px;
+}
+.admin-search{
+    font-size: 20px;
+    letter-spacing: 4px;
+    min-height: 48px;
+    border-radius: 15px;
+    min-width: 956px;
+    padding-left: 14px;
+    display: flex;
+    justify-content: left;
+    border: 2px solid#ECECEC;
+}
+.admin-block{
+    padding-top: 42px;
+    padding-bottom: 60px;
+    max-height: 150px;
+    display: flex;
+    justify-content: center;
+}
+.admin-table{
+    min-height: 640px;
+    min-height: 1377px;
+    border: 1px solid #898C9E;
+    box-shadow: 0px 1px 6px #898C9E;
+}
+.change-btn-block{
+    padding: 60px 206px 42px;
+    justify-content: space-between;
+    display: flex;
+}
+.admin-page-change-Btn{
+    font-size: 18px;
+    padding: 13px 100px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 5px 5px 0px #898C9E;
+    transition: .3s all ease-in-out;
+    min-width: 180px;
+    cursor: pointer;
+    line-height: 18px;
+}
