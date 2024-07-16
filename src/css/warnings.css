@@ -1,0 +1,43 @@
+.warning{
+    display: none;
+    color: red;
+}
+
+.warning-text{
+    color: red;
+}
+
+.warning-field{
+    border-bottom: 1px solid red;
+}
+
+.warning-field::placeholder{
+    color: red;
+}
+
+.warning-selector{
+    border: 2px solid red;
+}
+
+.default-field{
+    border-bottom: 1px solid black;
+}
+
+.default-text{
+    color: black;
+}
+
+.default-selector{
+    border: 2px solid black;
+}
+
+.warning-education{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    /* margin-top 10px */
+}
+
+.default-field::placeholder{
+    color: gray;
+}
