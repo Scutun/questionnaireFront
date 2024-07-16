@@ -1,0 +1,26 @@
+.disclaimer-Btn-Position{
+    display: flex;
+    justify-content: end;
+}
+.aproveBtn.disc{  
+   margin-right: 32px;
+   margin-bottom: 15px;
+   
+}
+.discheader{
+    text-align: center;
+    font-size: 32px;
+    margin:56px 0px;
+    letter-spacing: 8px;
+
+}
+.common-text{
+    padding-bottom: 68px;
+    font-size: 24px;
+    margin:0px  108px;
+    letter-spacing: 3px;
+    line-height: 50px;
+}
+.main.disk{
+    height: 100%;
+}
