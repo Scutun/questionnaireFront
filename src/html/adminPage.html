@@ -14,30 +14,45 @@
     <header class="header admin-header" >
         
         <div class="header-cont">
-               
-                <h2 class="header-content">Оценка развития ребенка от 14 мес. до 3,5 лет</h2>
+               <select name="admin-test-name" id="admin-test-name" class="admin-head-select">
+                    <option value="baby-test">Оценка развития ребенка от 14 мес. до 3,5 лет </option>
+                    
+               </select>
+               <div class="admin-img-header">
+                    <div class="admin-img-svg">
+                    <img  src="../../assets/SVG/user-profile-account-person-svgrepo-com.svg"/>
+                    </div>
+                    <p class="admin-email">usereeeeeeeeeeeeee@mail.ru</p>
+               </div>
+              
         </div>     
     </header>
 
     <main class="admim-main">
         <div class="admin-btn-after-head">
-            <button class="admin-page-aproveBtn">aboba</button>
-            <button class="admin-page-aproveBtn">aboba</button>
-            <button class="admin-page-aproveBtn">aboba</button>
+            <button class="admin-page-aproveBtn" name="navigation" id="glava">Главы</button>
+            <button class="admin-page-aproveBtn" name="navigation" id="question">Вопросы</button>
+            <button class="admin-page-aproveBtn" name="navigation" id="answers">Ответы</button>
         </div>
         <div class="admin-main-content">
             <div class="admin-block">
                 <input type="text" class="admin-search" placeholder="Введите вопрос">
             </div>
                 <div class="admin-table">
-
+                        
                 </div>
+                
+                
+
             <div class="change-btn-block">
-                <button class="admin-page-change-Btn">Добавить</button>
-                <button class="admin-page-change-Btn">Удалить</button>
-                <button class="admin-page-change-Btn">Изменить</button>
+                <button  class="admin-page-change-Btn" name="changeBtn">Добавить</button>
+                <button class="admin-page-change-Btn" name="changeBtn">Удалить</button>
+                <button class="admin-page-change-Btn" name="changeBtn" >Изменить</button>
+                
             </div>            
-        </div>        
+        </div>
+        <div class="admin-footer"></div>        
     </main>
+    <script src="./scripts/adminPage.js"></script>
 </body>
 </html>
