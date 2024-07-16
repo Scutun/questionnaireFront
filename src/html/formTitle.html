@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Оценка развития ребенка от 14 мес. дл 3,5 лет</title>
+</head>
+<body>
+    @@include('blocks/header.html')
+    <main class="main form-title">
+        <div class="main-content">
+            <form>
+                <h1 class="que-header">Анкета</h1>
+                <div class="que-content">
+                    <label for="surnameInput" class="form-title-text" id="surname-text">Фамилия ребенка :</label>
+                    <input type="text" class="que-text-input surname" id="surnameInput" placeholder="Введите фамилию ребенка"/>
+                    <svg class="warning" id="surname-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label for="nameInput" class="form-title-text name" id="name-text">Имя ребенка :</label>
+                    <input type="text" class="que-text-input name" id="nameInput" placeholder="Введите имя ребенка"/>
+                    <svg class="warning" id="name-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label for="birthInput" id="birth-text" class="form-title-text">Дата рождения ребенка:
+                    <input type="date" class="que-text-input birth" id="birthInput"/>
+                    (год / месяц / день)</label>
+                    <svg class="warning" id="birth-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label for="dateInput" id="date-text" class="form-title-text">Дата заполнения листа :</label>
+                    <input type="date" class="que-text-input date" id="dateInput"/>
+                    <svg class="warning" id="date-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content radio-sex">
+                    <label class="form-title-text" id="sex-text">Пол ребенка :</label>
+                    <div class="radio-btn">
+                        <input type="radio" id="radio-male" name="radio-sex" value="1">
+                        <label class="radio-btn sex male" for="radio-male">М</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="radio-female" name="radio-sex" value="2">
+                        <label class="radio-btn sex female" for="radio-female">Ж</label>
+                    </div>
+                    <svg class="warning" id="sex-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label for="emailInput" id="email-text" class="form-title-text">Email:</label>
+                    <input type="email" class="que-text-input email" placeholder="Введите электронную почту" id="emailInput"/>
+                    <svg class="warning" id="email-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label for="phoneInput" id="phone-text" class="form-title-text">Телефон:</label>
+                    <input type="text" class="que-text-input phone" placeholder="Введите номер телефона" id="phoneInput"/>
+                    <svg class="warning" id="phone-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label class="form-title-text" id="who-fill-text">Кто заполняет тест:</label>
+                    <div class="radio-who-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mother" name="radio-who" value="1">
+                            <label class="radio-who mother" for="radio-mother">мать</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-father" name="radio-who" value="2">
+                            <label class="radio-who father" for="radio-father">отец</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-grand" name="radio-who" value="3">
+                            <label class="radio-who grand" for="radio-grand">бабушка</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-another" name="radio-who" value="4">
+                            <label class="radio-who another" for="radio-another">другой член семьи</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-teacher" name="radio-who" value="5">
+                            <label class="radio-who teacher" for="radio-teacher">няня, воспитатель и др.</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="who-fill-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="week-text" for="weekInput" class="form-title-text">Неделя рождения ребенка:
+                    <input type="number" class="que-text-input week" placeholder="Введите неделю рождения" id="weekInput"/>
+                    (норма = 40)</label>
+                    <svg class="warning" id="week-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="which-text" class="form-title-text">Какие роды:</label>
+                    <div class="radio-which-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-normal" name="radio-which" value="1">
+                            <label class="radio-who normal" for="radio-normal">нормальные</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-for-child" name="radio-which" value="2">
+                            <label class="radio-who for-child" for="radio-for-child">осложнения для ребенка</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-for-mother" name="radio-which" value="3">
+                            <label class="radio-who for-mother" for="radio-for-mother">осложнения для матери</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-for-both" name="radio-which" value="4">
+                            <label class="radio-who for-both" for="radio-for-both">осложнения для обоих</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="which-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="health-text" class="form-title-text">Состояние ребенка:</label>
+                    <div class="radio-health-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-healthy" name="radio-status" value="1">
+                            <label class="radio-who healthy" for="radio-healthy">здоров</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-healthy-after" name="radio-status" value="2">
+                            <label class="radio-who healthy-after" for="radio-healthy-after">полностью выздоровел после тяжелой болезни</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-weak-after" name="radio-status" value="3">
+                            <label class="radio-who weak-after" for="radio-weak-after">ослаблен после тяжелой болезни</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-ill" name="radio-status" value="4">
+                            <label class="radio-who ill" for="radio-ill">физически болен</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="health-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="yes-no-text" class="form-title-text">Бывают ли судороги:</label>
+                    <div class="radio-yes-no-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-yes" name="radio-yes-no" value="1">
+                            <label class="radio-who yes" for="radio-yes">Да</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-no" name="radio-yes-no" value="2">
+                            <label class="radio-who no" for="radio-no">Нет</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="yes-no-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="where-text" class="form-title-text">Где воспитывается ребенок:</label>
+                    <div class="radio-where-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-family" name="radio-where" value="1">
+                            <label class="radio-who family" for="radio-family">в семье</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-kindergarten" name="radio-where" value="2">
+                            <label class="radio-who kinder" for="radio-kindergarten">в семье и яслях/садике</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-everyday" name="radio-where" value="3">
+                            <label class="radio-who everyday" for="radio-everyday">в круглосуточных яслях</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-house" name="radio-where" value="4">
+                            <label class="radio-who house" for="radio-house">в дет. доме (доме ребенка)</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="where-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="lang-text" class="form-title-text">Язык общения в семье:</label>
+                    <div class="radio-lang-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-russian" name="radio-lang" value="1">
+                            <label class="radio-who russian" for="radio-russian">только русский</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-another-lang" name="radio-lang" value="2">
+                            <label class="radio-who another-lang" for="radio-another-lang">русский и другой</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="lang-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="children-text" for="childrenInput" class="form-title-text">Количество детей в семье:</label>
+                    <input type="number" class="que-text-input children" placeholder="Введите количество детей" id="childrenInput"/>
+                    <svg class="warning" id="children-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="mentor-text" class="form-title-text">Основной воспитатель ребенка:</label>
+                    <div class="radio-mentor-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mentor-mother" name="radio-mentor" value="1">
+                            <label class="radio-who mentor-mother" for="radio-mentor-mother">мать</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mentor-father" name="radio-mentor" value="2">
+                            <label class="radio-who mentor-father" for="radio-mentor-father">отец</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mentor-grand" name="radio-mentor" value="3">
+                            <label class="radio-who mentor-grand" for="radio-mentor-grand">бабушка</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mentor-teacher" name="radio-mentor" value="4">
+                            <label class="radio-who mentor-teacher" for="radio-mentor-teacher">няня, воспитатель и др.</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mentor-another" name="radio-mentor" value="5">
+                            <label class="radio-who mentor-another" for="radio-mentor-another">другой член семьи</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="mentor-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content line">
+                    <div class="underdog">
+                        <label id="mood-text" class="form-title-text">Обычное настроение воспитателя:</label>
+                        <label id="mood-text2" class="down">(выберите одно самое характерное)</label>
+                    </div>
+                    <div class="radio-mood-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mood-cheerful" name="radio-mood" value="1">
+                            <label class="radio-who mood-cheerful" for="radio-mood-cheerful">бодрое</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mood-calm" name="radio-mood" value="2">
+                            <label class="radio-who mood-calm" for="radio-mood-calm">спокойное</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mood-irritated" name="radio-mood" value="3">
+                            <label class="radio-who mood-irritated" for="radio-mood-irritated">раздраженное</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-mood-depressed" name="radio-mood" value="4">
+                            <label class="radio-who mood-depressed" for="radio-mood-depressed">подавленное</label>
+                        </div>
+                    </div>   
+                    <svg class="warning" id="mood-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content line">
+                    <div class="underdog">
+                        <label id="appreciate-text" class="form-title-text">Что воспитатель ценит в ребенке:</label>
+                        <label id="app-text-2" class="down">(выберите одно самое характерное)</label>
+                    </div>
+                    <div class="radio-appreciate-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-obedience" name="radio-appreciate" value="1">
+                            <label class="radio-who obedience" for="radio-obedience">послушание</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-sociability" name="radio-appreciate" value="2">
+                            <label class="radio-who sociability" for="radio-sociability">общительность</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-curiosity" name="radio-appreciate" value="3">
+                            <label class="radio-who curiosity" for="radio-curiosity">любопытство</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="appreciate-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="que-content">
+                    <label id="economic-text" class="form-title-text">Экономическое положение семьи:</label>
+                    <div class="radio-economic-btns">
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-good" name="radio-economic" value="1">
+                            <label class="radio-who economic" for="radio-good">хорошее</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-average" name="radio-economic" value="2">
+                            <label class="radio-who economic" for="radio-average">среднее</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-bad" name="radio-economic" value="3">
+                            <label class="radio-who economic" for="radio-bad">плохое</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="radio-very-bad" name="radio-economic" value="4">
+                            <label class="radio-who economic" for="radio-very-bad">очень плохое</label>
+                        </div>
+                    </div>
+                    <svg class="warning" id="economic-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                </div>
+                <div class="education-text">
+                    <label class="age-text">Возраст</label>
+                    <label class="education-select-text">Образование</label>
+                </div>
+                <div class="que-education">
+                    <div class="que-education-parent">
+                        <label for="que-mother-age" class="que-parent" id="mother-age">Мать</label>
+                        <label for="que-father-age" class="que-parent" id="father-age">Отец</label>
+                        <label for="que-mentor-age" class="que-parent" id="mentor-age">Воспитатель</label>
+                    </div>
+                    <div class="que-education-age">
+                        <input type="number" class="que-age-input" id="que-mother-age"/>
+                        <input type="number" class="que-age-input" id="que-father-age"/>
+                        <input type="number" class="que-age-input" id="que-mentor-age"/>
+                    </div>
+                    <div class="que-education-selectors">
+                        <select class="que-selector" id="mother-education">
+                            @@include('./blocks/select.html')
+                        </select> 
+                        <select class="que-selector" id="father-education">
+                            @@include('./blocks/select.html')
+                        </select> 
+                        <select class="que-selector" id="mentor-education">
+                            @@include('./blocks/select.html')
+                        </select> 
+                    </div>
+                    <div class="warning-education">
+                        <svg class="warning" id="mother-ed-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                        <svg class="warning" id="father-ed-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                        <svg class="warning" id="mentor-ed-warning" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">@@include('./blocks/warning.html')</svg>
+                    </div>
+                </div>
+                <div class="que-btn-next">
+                    <button class="aproveBtn que-next">Далее</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/scripts/formTitle.js"></script>
+</body>
+</html>

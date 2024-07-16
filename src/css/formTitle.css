@@ -1,0 +1,324 @@
+.main.form-title{
+    height: 100%;
+}
+
+.que-header{
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    padding-top: 56px; 
+    padding-bottom: 32px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.underdog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.down{
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.que-content.line{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.que-content{
+    font-size: 24px;
+    margin-left:  84px;
+    margin-bottom: 44px;
+    display: flex;
+    gap: 30px;
+}
+
+.form-title-text{
+    font-family: 'Roboto';
+    letter-spacing: 3px;
+}
+
+.que-text-input{
+    font-size: 22px;
+    border: none;
+    border-bottom: 1px ridge black;
+    padding: 0px 20px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 40px;
+}
+
+.radio-who-btns{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 566px;
+    gap: 20px;
+}
+
+.radio-who{
+    text-align: center;
+    padding: 0px;
+    padding-top: 8px;
+    min-height: 30px;
+}
+
+.radio-which-btns{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 688px;
+    gap: 20px;
+}
+
+.radio-health-btns{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 732px;
+    gap: 20px;
+}
+
+.radio-yes-no-btns, 
+.radio-lang-btns{
+    display: flex;
+    gap: 20px;
+}
+
+.radio-where-btns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 648px;
+}
+
+.radio-mentor-btns{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 620px;
+    gap: 20px;
+}
+
+.radio-mood-btns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 360px;
+}
+
+.radio-appreciate-btns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 560px;
+}
+
+.radio-economic-btns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 320px;
+}
+
+.que-education{
+    display: flex;
+    margin-left: 84px;
+}
+
+.que-education-parent{
+    display: flex;
+    flex-direction: column;
+    margin-right: 88px;
+    gap: 60px;
+}
+
+.que-education-selectors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 66px;
+    margin-top: 8px;
+}
+
+.que-education-age{
+    margin-right: 166px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.education-text{
+    display: flex;
+    justify-content: end;
+    max-width: 784px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    margin-top: 70px;
+    margin-bottom: 32px;
+}
+
+/*------------------------------WIDTH---------------------------------*/
+
+.education-select-text{
+    margin-left: 157px;
+}
+
+.que-selector{
+    max-width: 170px;
+    min-height: 44px;
+    border-radius: 22px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #1B31F4;
+    outline: none;
+}
+
+.que-text-input.children{
+    min-width: 526px;
+}
+
+.que-parent{
+    line-height: 50px;
+    font-size: 25px;
+}
+
+.que-age-input{
+    max-width: 114px;
+    border: 0px;
+    border-bottom: 1px ridge black;
+    line-height: 46px;
+    font-size: 24px;
+    outline: none;
+    text-align: center;
+}
+
+.que-text-input.name{
+    min-width: 593.6px;
+}
+
+.que-text-input.surname{
+    min-width: 526px;
+}
+
+.que-text-input.birth, .que-text-input.date{
+    min-width: 270px;
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.radio-btn.sex{
+    border-radius: 50%;
+    padding: 7px 11px;
+    margin-left: 46px;
+    font-size: 24px;
+}
+
+.radio-btn.sex.male{
+    margin-left: 16px;
+}
+
+.radio-btn.sex.female{
+    margin-left: 16px;
+}
+
+.que-text-input.email{
+    min-width: 704px;
+}
+
+.que-text-input.phone{
+    min-width: 661.39px;
+}
+
+.radio-who.mother, 
+.radio-who.father, 
+.radio-who.grand, 
+.radio-who.yes, 
+.radio-who.no,
+.radio-who.healthy,
+.radio-who.mentor-mother,
+.radio-who.mentor-father,
+.radio-who.mentor-grand,
+.radio-who.economic{
+    min-width: 142px;
+}
+
+.radio-who.another{
+    min-width: 247px;
+}
+
+.que-text-input.week{
+    min-width: 422px;
+}
+
+.radio-who.normal, 
+.radio-who.for-child, 
+.radio-who.for-mother, 
+.radio-who.for-both,
+.radio-who.family, 
+.radio-who.house{
+    min-width: 330px;
+}
+
+.radio-who.healthy-after{
+    min-width: 541px;
+}
+
+.radio-who.weak-after{
+    min-width: 394px;
+}
+
+.radio-who.ill,
+.radio-who.kinder, 
+.radio-who.everyday, 
+.radio-who.russian, 
+.radio-who.another-lang,
+.radio-who.teacher,
+.radio-who.mentor-teacher,
+.radio-who.mentor-another{
+    min-width: 289px;
+}
+
+.radio-who.mood-cheerful, 
+.radio-who.mood-calm, 
+.radio-who.mood-irritated, 
+.radio-who.mood-depressed{
+    min-width: 163px;
+}
+
+.radio-who.obedience,
+.radio-who.sociability,
+.radio-who.curiosity{
+    min-width: 168px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+/*---------------------------Button---------------------------*/
+
+.que-btn-next{
+    display: flex;
+    justify-content: end;
+    margin-top: 78px;
+}
+
+.aproveBtn.que-next{
+    margin-bottom: 40px;
+    margin-right: 60px;
+}
+
+/*-------------------------------pseudo-------------------------------------*/
+.que-selector:focus, .radio-who:focus, .que-text-input:focus, .que-age-input:focus{
+    outline: none;
+    border-bottom: 1px solid #1B31F4;
+}

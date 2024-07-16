@@ -96,7 +96,6 @@ svg *[stroke] { stroke: currentColor}
 
 .radio-btn label {
 	display: inline-block;
-	padding: 5px 20px;
 	font-size: 18px;
     border-radius: 30px;
 	border: 2px solid #1B31F4;
