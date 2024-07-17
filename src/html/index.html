@@ -1,51 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/styles/styles.css" />
-    </head>
-    <body>
-        @@include('blocks/header.html')
-        <main class="main">
-            <div class="main-content">
-                <div>
-                    <button class="selectedBtn" onclick="window.location.href = './disclaimer.html'">Текст</button>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Ознакомьтесь перед прохождением опроса</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    @@include('blocks/header.html')
+    <main class="main disk" >
+        <div class="main-content">
+            
+                <div class="discheader">
+                    Инструкция для родителей
                 </div>
-                <div>
-                    <button class="aproveBtn" onclick="window.location.href ='./adminPage.html'">Teкст</button>
+                <div class="common-text">
+                    Уважаемые родители и опекуны!
                 </div>
-                <div>
-                <div class="pageBtns">
-                    <button class="pageBtn">1</button>
-                    <button class="pageBtn">2</button>
-                    <button class="pageBtn">3</button>
-                    <button class="pageBtn">4</button>
-                    <button class="pageBtn">5</button>
-                    <button class="pageBtn">6</button>
-                    <button class="nextBtn" onclick="window.location.href='./formTitle.html'">
-                        @@include('./blocks/svg-arrow.html')
-                    </button>
+                <div class="common-text">
+                    Прежде чем использовать эту анкету, пожалуйста, обратите внимание на следующие важные моменты:
                 </div>
-                <div class="radio-btns">
-                    <p class="radio-btn">
-                        <input type="radio" id="radio-yes" name="radio-yes-no" value="1">
-                        <label for="radio-yes">Да</label>
-                    </p>
-                    <p class="radio-btn">
-                        <input type="radio" id="radio-no" name="radio-yes-no" value="0">
-                        <label for="radio-no">Нет</label>
-                    </p>
-                    <p class="radio-btn">
-                        <input type="radio" id="radio-ds" name="radio-yes-no" value="2">
-                        <label for="radio-ds">Не знаю</label>
-                    </p>
+                <ol class="common-text">
+                    <li>Результаты могут быть неточными и требуют профессиональной оценки.</li>
+                    <li>Данные предназначены только для общей информации и не могут заменить консультацию специалиста.</li>
+                    <li>Внимательно заполните анкету и следуйте инструкциям.</li>
+                    <li>Исправляйте ошибки и неточности, если таковые имеются.</li>
+                    <li>Если у вас возникнут вопросы или потребуется дополнительная информация, пожалуйста, обратитесь к специалисту.</li>
+                </ol>
+                <div class="common-text">
+                    Благодарим за понимание и желаем успехов в оценке развития вашего ребёнка.
                 </div>
+            
+            <div class="disclaimer-Btn-Position">
+                <button class="aproveBtn disc" onclick='window.location.href = "./formTitle.html"'>Продолжить</button>
             </div>
+        </div>
         </main>
-    </body>
+</body>
 </html>

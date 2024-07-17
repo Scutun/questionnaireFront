@@ -81,8 +81,8 @@ function createFormTtile(event){
             info.gender = "0"
         }
         else info.gender = "1"
+        makeDefaultRadio("sex-text","sex-warning")
     }
-    
 
     info.email = document.getElementById("emailInput").value
     info.email === "" ? makeWarnigText("email-text","emailInput","email-warning") : makeDefaultText("email-text","emailInput","email-warning")
@@ -231,7 +231,7 @@ function createFormTtile(event){
     }
     if(info.educaterEducation != 0 && info.educaterAge !== ""){
         document.getElementById("mentor-age").classList.add("default-text")
-        
+        return
     }
 
     fetch(`http://26.145.60.29:3000/api/form/create`, {
@@ -242,7 +242,7 @@ function createFormTtile(event){
         }
     })
     console.log(info)
-    // window.location = "/dist/index.html";
+    // window.location.href = "./index.html";
 }
 
 let buttonNext = document.querySelector(".aproveBtn.que-next")
