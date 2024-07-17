@@ -231,7 +231,7 @@ function createFormTtile(event){
     }
     if(info.educaterEducation != 0 && info.educaterAge !== ""){
         document.getElementById("mentor-age").classList.add("default-text")
-        return
+        
     }
 
     fetch(`http://26.145.60.29:3000/api/form/create`, {
@@ -241,8 +241,8 @@ function createFormTtile(event){
             'Content-Type': 'application/json'
         }
     })
-    console.log(info)
-    // window.location.href = "./index.html";
+
+    window.location.href = "./question.html";
 }
 
 let buttonNext = document.querySelector(".aproveBtn.que-next")

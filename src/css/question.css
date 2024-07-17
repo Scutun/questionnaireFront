@@ -1,0 +1,47 @@
+.radio-btn.question label {
+    padding: 8px 13px;
+    border-radius: 29px;
+    margin-left: 60px;
+    transition: 0.3s;
+}
+.question-text {
+    font-size: 24px;
+    display: flex;
+    justify-content: left;
+    margin-left: 60px;
+    margin: 0px 0px 10px 60px;
+}
+.radio-btn.question{
+    display:inline-flex;
+    margin-bottom: 21px;
+}
+.answer-text {
+    margin: 0px 0px 0px 18px;
+    font-size: 24px; 
+    display: flex;
+    
+}
+.question-blok{
+    margin-bottom: 10px;
+}
+
+.btns-questions{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.make-selected{
+    background-color: #1B31F4;
+    display: none;
+    color: white;
+}
+
+.make-default{
+    background-color: white;
+    color: black;
+}
+
+.main.questions{
+    height: 100%;
+}
