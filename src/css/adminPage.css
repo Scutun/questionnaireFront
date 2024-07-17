@@ -1,0 +1,135 @@
+.header.admin-header{
+    box-shadow: 0px 4px 3px #898C9E;
+    min-height: 167px;
+    justify-content: left;
+    padding-left: 20px;
+}
+
+.admim-main{
+    background-color: #ECECEC;
+  
+
+}
+.admin-btn-after-head{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-left: 418px;
+    margin-right: 418px;
+    padding-top: 72px;
+    margin-bottom: 96px;
+}
+.admin-main-content{
+    margin-left: 232px;
+    margin-right: 232px;
+    min-width: 1444px;
+    min-height: 400px;
+   
+    background-color: white;
+    align-items: center;
+    padding: 0px 34px;
+    
+    
+}
+
+.admin-search{
+    font-size: 20px;
+    letter-spacing: 4px;
+    min-height: 48px;
+    border-radius: 15px;
+    min-width: 956px;
+    padding-left: 14px;
+    display: flex;
+    justify-content: left;
+    border: 2px solid#ECECEC;
+}
+.admin-block{
+    padding-top: 42px;
+    padding-bottom: 60px;
+    max-height: 150px;
+    display: flex;
+    justify-content: center;
+}
+.admin-table{ 
+    min-width: 640px;
+    border: 1px solid #898C9E;
+    box-shadow: 0px 1px 6px #898C9E;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    text-align: center;
+}
+.admin-main-table td {
+    border: 1px solid #898C9E;
+    background-color: white;
+}
+
+.admin-head-select{
+    font-size: 32px;
+    min-height: 114px;
+    min-width: 1280px;
+    border: 2px solid #ECECEC;
+    border-radius: 20px;
+    box-shadow: 0px 3px 4px 0px #898C9E;
+    padding-top: 21px;
+    padding-bottom: 32px;
+    padding-left: 29px;
+    letter-spacing: 4px;
+    
+}
+.admin-img-header{
+  
+    
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin: none;
+}
+.admin-email{
+    margin: 0px 0px;
+}
+.admin-img-svg{
+ display: flex;
+    justify-content: center;
+}
+.admin-footer{
+    min-height: 135px;
+    background-color: #ECECEC;
+}
+
+.admin-page-aproveBtn{
+    font-size: 18px;
+    padding: 13px 100px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 5px 5px 0px #898C9E;
+    transition: .3s all ease-in-out;
+    min-width: 300px;
+    cursor: pointer;
+    line-height: 18px;
+}
+
+.change-btn-block{
+    padding: 60px 206px 42px;
+    justify-content: space-between;
+    display: flex;
+}
+.admin-page-change-Btn{
+    font-size: 18px;
+    padding: 13px 100px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 5px 5px 0px #898C9E;
+    transition: .3s all ease-in-out;
+    min-width: 180px;
+    cursor: pointer;
+    line-height: 18px;
+}
+
+.admin-page-change-Btn:hover  , .admin-page-aproveBtn:hover{
+    background-color: #1B31F4;
+    color: white;
+}
+
+
