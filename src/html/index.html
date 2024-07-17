@@ -35,9 +35,17 @@
                 </div>
             
             <div class="disclaimer-Btn-Position">
-                <button class="aproveBtn disc" onclick='window.location.href = "./formTitle.html"'>Продолжить</button>
+                <button class="aproveBtn disc" onclick="go()">Продолжить</button>
             </div>
         </div>
-        </main>
+        </main>     
+        <script>
+            function go(){
+                localStorage.setItem('currentPage',1)
+                localStorage.setItem('currentQuestion', 1)
+                localStorage.setItem('currentTitle', 1)
+                window.location.href ='./question.html'
+            }
+        </script>
 </body>
 </html>

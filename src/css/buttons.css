@@ -51,6 +51,20 @@ svg *[stroke] { stroke: currentColor}
     min-width: 320px;
 }
 
+.nextBtn-questions{
+    font-size: 20px;
+    margin-left: 5px;
+    padding: 0px 15px;
+    padding-top: 0px;
+    color: black;
+    border: 2px solid #1B31F4;
+    border-radius: 19px;
+    background-color: white;
+    box-shadow: 2px 4px 5px gray;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+
 .aproveBtn{
     font-size: 18px;
     padding: 13px 100px;

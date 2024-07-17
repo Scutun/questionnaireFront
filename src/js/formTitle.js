@@ -121,9 +121,9 @@ function createFormTtile(event){
     } else{
         makeDefaultRadio("yes-no-text","yes-no-warning")
         if(document.querySelector('input[name="radio-yes-no"]:checked').value === "1"){
-            info.cramps = 0
+            info.cramps = "0"
         }
-        else info.cramps = 1
+        else info.cramps = "1"
     }
     
     if(document.querySelector('input[name="radio-where"]:checked')===null){
@@ -241,8 +241,24 @@ function createFormTtile(event){
             'Content-Type': 'application/json'
         }
     })
-
-    window.location.href = "./question.html";
+    .then(data => {
+        if(data.status===400){          
+            
+            
+            // window.location.href ='./question.html'
+        }
+        return data
+    })
+    .then ((data) => data.json())
+    .then((user) => {
+        let usersId = user.newForm.id
+        localStorage.setItem("usersId",usersId)
+        localStorage.setItem('currentPage',1)
+        localStorage.setItem('currentQuestion', 1)
+        localStorage.setItem('currentTitle', 1)
+        localStorage.setItem('queOnPage', 1)
+        // window.location.href ='./question.html'
+    })
 }
 
 let buttonNext = document.querySelector(".aproveBtn.que-next")

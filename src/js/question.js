@@ -35,10 +35,9 @@ const data =[ {
   "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
 }];
 
-
-
 let queAmount = 6
 
+console.log("usersId - "+localStorage.getItem("usersId"))
 
 //кнопки
 const queMain = document.getElementById("btns-questions")
@@ -57,6 +56,7 @@ function createBtn(index){
     let curr = (createdBtn.value-1) * 4 + 1
     console.log(curr)
     localStorage.setItem('currentQuestion', curr)
+    getAllInfo()
   })
 
   queMain.appendChild(createdBtn)
@@ -163,7 +163,7 @@ for (let i = currentQuestion1-1; i < currentQuestion1-1 + 4; i++) {
     createdBtn2.classList.add("nextBtn-questions")
     createdBtn2.value = "Далее"
     createdBtn2.addEventListener("click",(event)=>{
-    
+      getAllInfo()
       current = parseInt(localStorage.getItem('currentTitle')) + 1
       localStorage.setItem('currentTitle',current)
       console.log(current)
@@ -175,8 +175,24 @@ for (let i = currentQuestion1-1; i < currentQuestion1-1 + 4; i++) {
       break
     }
   createQuestionBlock(data,i);
-  
+  // let uiuiuoiu = parseInt(localStorage.getItem('queOnPage')) + 1
+  // localStorage.setItem('queOnPage', uiuiuoiu)
+  // console.log(uiuiuoiu)
 }
 
 
+let arr = []
+function getAllInfo(){
+    const srr =  document.querySelectorAll('input[type="radio"]:checked')
+    srr.forEach((item,index)=>{
+      const answChecked = {}
+      answChecked.id = `${index+parseInt(localStorage.getItem('currentQuestion'))-(parseInt(localStorage.getItem("currentPage"))-1)*4}`
+      answChecked.answer = item.value
+      arr.push(answChecked)
+      console.log(answChecked)
+    })
+    console.log(arr)
+}
+
+console.log(parseInt(localStorage.getItem("currentQuestion")))
 let blocksAmount 
