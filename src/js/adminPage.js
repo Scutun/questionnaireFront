@@ -20,4 +20,17 @@ for(key in test)
      document.querySelector('.admin-main-table').appendChild(row)
      
   }
+  document.getElementById("admin-email").value
   
+let questionariySelect = ["a","b"]
+const parentSelect = document.getElementById("admin-test-name")
+for (let i = 0; i < questionariySelect.length;i++){
+  const optionCreated = document.createElement("option")
+  optionCreated.id = `option-${i+1}`
+  optionCreated.value = i+1
+  optionCreated.text = questionariySelect[i]
+  
+  parentSelect.appendChild(optionCreated)
+}
+
+let answers = ["Да", "Нет", "Не знаю"]
