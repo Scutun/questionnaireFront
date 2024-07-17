@@ -1,41 +1,11 @@
-const data =[ {
-  "id": "1",
-  "content": "Здоровается, говоря “Привет” или что-то подобное.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "2",
-  "content": "Сплетничает или ябедничает на других детей.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "3",
-  "content": "Сочувствует другим детям, старается помочь и утешить их.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "4",
-  "content": "Иногда говорит “Нет”, когда пристают.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "5",
-  "content": "Немного помогает в домашних делах.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "6",
-  "content": "Просит помочь, когда что-нибудь делает.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-}];
 
-let queAmount = 6
+fetch('http://26.145.60.29:3000/api/question/find')
+.then((data)=> data.json())
+.then((que) => {
+  let data1 = que
+  console.log(data1)
+
+let queAmount = 216
 
 console.log("usersId - "+localStorage.getItem("usersId"))
 
@@ -53,7 +23,7 @@ function createBtn(index){
     let summ = createdBtn.value
     localStorage.setItem('currentPage',summ)
     window.location.href = "./question.html"
-    let curr = (createdBtn.value-1) * 4 + 1
+    let curr = (createdBtn.value-1) * 20 + 1
     console.log(curr)
     localStorage.setItem('currentQuestion', curr)
     getAllInfo()
@@ -61,7 +31,7 @@ function createBtn(index){
 
   queMain.appendChild(createdBtn)
 }
-for(let i = 0; i < Math.ceil(queAmount/4);i++){
+for(let i = 0; i < Math.ceil(queAmount/20);i++){
 createBtn(i)
 }
 var elements = Array.from(document.getElementsByClassName("pageBtn"));
@@ -80,7 +50,7 @@ if (item.value === localStorage.getItem('currentPage')) {
 //создание вопросов
 const parentElement = document.getElementById("опросник");
 
-function createQuestionBlock(data,i) {
+function createQuestionBlock(data1,i) {
 
   const questionBlock = document.createElement("div");
   
@@ -88,7 +58,7 @@ function createQuestionBlock(data,i) {
 
   const questionText = document.createElement("p");
   questionText.classList.add("question-text");
-  questionText.textContent = localStorage.getItem('currentQuestion')+". " + data[i].content;
+  questionText.textContent = localStorage.getItem('currentQuestion')+". " + data1.getQuestions[i].content;
   let idQue = parseInt(localStorage.getItem('currentQuestion')) + 1
   localStorage.setItem('currentQuestion', idQue)
 
@@ -105,11 +75,11 @@ function createQuestionBlock(data,i) {
     answerDiv.classList.add("radio-btn", "question");
     const input = document.createElement("input");
     input.type = "radio";
-    input.id = `${data[i].id}-${index + 1}`;
+    input.id = `${data1.getQuestions[i].id}-${index + 1}`;
     input.value = index + 1
-    input.name = `question-${data[i].id}`;
+    input.name = `question-${data1.getQuestions[i].id}`;
     const label = document.createElement("label");
-    label.htmlFor = `${data[i].id}-${index + 1}`;
+    label.htmlFor = `${data1.getQuestions[i].id}-${index + 1}`;
     
 
     const answerText = document.createElement("p");
@@ -132,7 +102,7 @@ function createQuestionBlock(data,i) {
 
 
 let arrayTitle = []
-data.forEach((item) =>{
+data1.getQuestions.forEach((item) =>{
   arrayTitle.push(item.titlename)
 })
 arrayTitle = [...new Set(arrayTitle)]
@@ -151,11 +121,11 @@ function makeTitle(titlename){
 
     createTitle.appendChild(makedTitle)
 }
-makeTitle(data[currentQuestion1].titlename)
+makeTitle(data1.getQuestions[currentQuestion1].titlename)
 // Создаем неограниченное количество блоков
 
-for (let i = currentQuestion1-1; i < currentQuestion1-1 + 4; i++) {
-  if(i === data.length) 
+for (let i = currentQuestion1-1; i < currentQuestion1-1 + 20; i++) {
+  if(i === data1.getQuestions.length) 
     {
     const createdBtn2 = document.createElement("input")
     createdBtn2.type = "button"
@@ -163,10 +133,7 @@ for (let i = currentQuestion1-1; i < currentQuestion1-1 + 4; i++) {
     createdBtn2.classList.add("nextBtn-questions")
     createdBtn2.value = "Далее"
     createdBtn2.addEventListener("click",(event)=>{
-      getAllInfo()
-      current = parseInt(localStorage.getItem('currentTitle')) + 1
-      localStorage.setItem('currentTitle',current)
-      console.log(current)
+      window.location.href = "./end.html"
     
     })
     
@@ -174,7 +141,7 @@ for (let i = currentQuestion1-1; i < currentQuestion1-1 + 4; i++) {
     
       break
     }
-  createQuestionBlock(data,i);
+  createQuestionBlock(data1,i);
   // let uiuiuoiu = parseInt(localStorage.getItem('queOnPage')) + 1
   // localStorage.setItem('queOnPage', uiuiuoiu)
   // console.log(uiuiuoiu)
@@ -196,3 +163,4 @@ function getAllInfo(){
 
 console.log(parseInt(localStorage.getItem("currentQuestion")))
 let blocksAmount 
+})
