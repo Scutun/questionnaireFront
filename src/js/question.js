@@ -136,7 +136,7 @@ for (let i = currentQuestion1-1; i < currentQuestion1 + 20; i++) {
       let curr = (summ-1) * 20 + 1
       localStorage.setItem('currentQuestion', curr)
       getAllInfo()
-      // window.location.href = "./end.html"
+      window.location.href = "./end.html"
 
     })
     
