@@ -1,0 +1,131 @@
+.pageBtns{
+    border-radius: 19px;
+    display: flex;
+    gap: 12px;
+    max-width: 380px;
+}
+
+/*Кнопки*/
+.pageBtn{
+    font-size: 18px;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    border: 2px solid #1B31F4;
+    background-color: white;
+    box-shadow: 2px 4px 5px gray;
+    color: black;
+    text-align: center;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+
+svg *[fill] { fill:currentColor}
+svg *[stroke] { stroke: currentColor}
+
+.nextBtn{
+    font-size: 20px;
+    margin-left: 5px;
+    padding: 0px 15px;
+    padding-top: 4px;
+    color: #1B31F4;
+    border: 2px solid #1B31F4;
+    border-radius: 19px;
+    background-color: white;
+    box-shadow: 2px 4px 5px gray;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+
+.selectedBtn{
+    padding: 9px 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 2px solid #1B31F4;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 6px 3px gainsboro;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+    line-height: 18px;
+    min-width: 320px;
+}
+
+.nextBtn-questions{
+    font-size: 20px;
+    margin-left: 5px;
+    padding: 0px 15px;
+    padding-top: 0px;
+    color: black;
+    border: 2px solid #1B31F4;
+    border-radius: 19px;
+    background-color: white;
+    box-shadow: 2px 4px 5px gray;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+
+.aproveBtn{
+    font-size: 18px;
+    padding: 13px 100px;
+    border-radius: 15px;
+    border: 2px solid #1B31F4;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 6px 3px gainsboro;
+    transition: .3s all ease-in-out;
+    min-width: 280px;
+    cursor: pointer;
+    line-height: 18px;
+}
+
+.selectedBtn:hover , .aproveBtn:hover , .pageBtn:hover, .nextBtn:hover{
+    background-color: #1B31F4;
+    color: white;
+}
+
+.pageBtns:hover .pageBtn:not(:hover){
+    opacity: 0.7;
+    transform: scale(0.85);
+}
+
+.pageBtns:hover .nextBtn:not(:hover){
+    opacity: 0.7;
+    transform: scale(0.85);
+}
+
+/*радио*/
+.radio-btns{
+    display: flex;
+    gap: 12px;
+}
+
+.radio-btn {
+	display: inline-block;
+}
+
+.radio-btn input[type=radio] {
+	display: none;
+}
+
+.radio-btn label {
+	display: inline-block;
+	font-size: 18px;
+    border-radius: 30px;
+	border: 2px solid #1B31F4;
+    transition: .3s all ease-in-out;
+    box-shadow: 2px 6px 3px gainsboro;
+    cursor: pointer;
+}
+ 
+.radio-btn input[type=radio]:checked + label {
+	background: #1B31F4;
+    color: white;
+}
+ 
+.radio-btn label:hover {
+	color: white;
+    /* 5F7CF9 */
+    background-color: #1B31F4;
+    transition: .5s;
+}
