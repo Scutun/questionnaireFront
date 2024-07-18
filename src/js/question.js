@@ -77,6 +77,7 @@ function createQuestionBlock(data1,i) {
     input.type = "radio";
     input.id = `${data1.getQuestions[i].id}-${index + 1}`;
     input.value = index + 1
+    if(index == 0) input.checked = true
     input.name = `question-${data1.getQuestions[i].id}`;
     const label = document.createElement("label");
     label.htmlFor = `${data1.getQuestions[i].id}-${index + 1}`;
@@ -97,7 +98,7 @@ function createQuestionBlock(data1,i) {
 }
 
 
-
+const createdBtn2 = document.createElement("input")
 
 
 
@@ -124,7 +125,7 @@ function makeTitle(titlename){
 makeTitle(data1.getQuestions[currentQuestion1].titlename)
 // Создаем неограниченное количество блоков
 
-for (let i = currentQuestion1-1; i < currentQuestion1-1 + 20; i++) {
+for (let i = currentQuestion1-1; i < currentQuestion1 + 20; i++) {
   if(i === data1.getQuestions.length) 
     {
     const createdBtn3 = document.createElement("input")
@@ -133,6 +134,12 @@ for (let i = currentQuestion1-1; i < currentQuestion1-1 + 20; i++) {
     createdBtn3.classList.add("nextBtn-questions")
     createdBtn3.value = "Завершить опрос"
     createdBtn3.addEventListener("click",(event)=>{
+      let summ = parseInt(localStorage.getItem('currentPage'))+1
+      localStorage.setItem('currentPage',summ)
+      let curr = (summ-1) * 20 + 1
+      console.log(curr)
+      localStorage.setItem('currentQuestion', curr)
+      getAllInfo()
       window.location.href = "./end.html"
 
     })
@@ -141,8 +148,8 @@ for (let i = currentQuestion1-1; i < currentQuestion1-1 + 20; i++) {
     
       break
     }
-    else if(i === currentQuestion1-2 + 20){
-      const createdBtn2 = document.createElement("input")
+    else if(i === currentQuestion1-1 + 20){
+      
     createdBtn2.type = "button"
     createdBtn2.id = `createdBtn-${i + 1}`;
     createdBtn2.classList.add("nextBtn-questions")
@@ -151,32 +158,47 @@ for (let i = currentQuestion1-1; i < currentQuestion1-1 + 20; i++) {
       let summ = parseInt(localStorage.getItem('currentPage'))+1
       localStorage.setItem('currentPage',summ)
       window.location.href = "./question.html"
-      let curr = (summ-1) * 20 
+      let curr = (summ-1) * 20 + 1
       console.log(curr)
       localStorage.setItem('currentQuestion', curr)
       getAllInfo()
-        
     })
     
       queMain.appendChild(createdBtn2)
+      break
     }
       createQuestionBlock(data1,i);
 }
 
 
 let arr = []
+
 function getAllInfo(){
+    let arrId = []
+    let arrAnsw = []
+    const info = {}
     const srr =  document.querySelectorAll('input[type="radio"]:checked')
     srr.forEach((item,index)=>{
+      
       const answChecked = {}
-      answChecked.id = `${index+parseInt(localStorage.getItem('currentQuestion'))-(parseInt(localStorage.getItem("currentPage"))-1)*4}`
+      answChecked.id = `${index+parseInt(localStorage.getItem('currentQuestion'))-20}`
+      arrId.push(answChecked.id)
       answChecked.answer = item.value
+      arrAnsw.push(answChecked.answer)
       arr.push(answChecked)
-      console.log(answChecked)
     })
-    console.log(arr)
-}
+    info.answerCodeArr = arrAnsw
+    info.questionIdArr = arrId
+    info.usersId = parseInt(localStorage.getItem('usersId'))
+    console.log(info)
+    // answerCodeArr, questionIdArr, usersId
+    fetch(`http://26.145.60.29:3000/api/user/answer`, {
+      method: "POST",
+      body: JSON.stringify(info),
+      headers:{
+          'Content-Type': 'application/json'
+      },
+  })}
 
 console.log(parseInt(localStorage.getItem("currentQuestion")))
-let blocksAmount 
 })
