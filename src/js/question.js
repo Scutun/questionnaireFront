@@ -31,9 +31,9 @@ function createBtn(index){
 
   queMain.appendChild(createdBtn)
 }
-for(let i = 0; i < Math.ceil(queAmount/20);i++){
-createBtn(i)
-}
+// for(let i = 0; i < Math.ceil(queAmount/20);i++){
+// createBtn(i)
+// }
 var elements = Array.from(document.getElementsByClassName("pageBtn"));
 
 
@@ -127,24 +127,40 @@ makeTitle(data1.getQuestions[currentQuestion1].titlename)
 for (let i = currentQuestion1-1; i < currentQuestion1-1 + 20; i++) {
   if(i === data1.getQuestions.length) 
     {
-    const createdBtn2 = document.createElement("input")
+    const createdBtn3 = document.createElement("input")
+    createdBtn3.type = "button"
+    createdBtn3.id = `createdBtn-${i + 1}`;
+    createdBtn3.classList.add("nextBtn-questions")
+    createdBtn3.value = "Завершить опрос"
+    createdBtn3.addEventListener("click",(event)=>{
+      window.location.href = "./end.html"
+
+    })
+    
+    queMain.appendChild(createdBtn3)
+    
+      break
+    }
+    else if(i === currentQuestion1-2 + 20){
+      const createdBtn2 = document.createElement("input")
     createdBtn2.type = "button"
     createdBtn2.id = `createdBtn-${i + 1}`;
     createdBtn2.classList.add("nextBtn-questions")
     createdBtn2.value = "Далее"
-    createdBtn2.addEventListener("click",(event)=>{
-      window.location.href = "./end.html"
-    
+    createdBtn2.addEventListener("click", (event)=>{
+      let summ = parseInt(localStorage.getItem('currentPage'))+1
+      localStorage.setItem('currentPage',summ)
+      window.location.href = "./question.html"
+      let curr = (summ-1) * 20 
+      console.log(curr)
+      localStorage.setItem('currentQuestion', curr)
+      getAllInfo()
+        
     })
     
-    queMain.appendChild(createdBtn2)
-    
-      break
+      queMain.appendChild(createdBtn2)
     }
-  createQuestionBlock(data1,i);
-  // let uiuiuoiu = parseInt(localStorage.getItem('queOnPage')) + 1
-  // localStorage.setItem('queOnPage', uiuiuoiu)
-  // console.log(uiuiuoiu)
+      createQuestionBlock(data1,i);
 }
 
 
