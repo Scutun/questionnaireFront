@@ -98,9 +98,6 @@ function createQuestionBlock(data1,i) {
 }
 
 
-const createdBtn2 = document.createElement("input")
-
-
 
 let arrayTitle = []
 data1.getQuestions.forEach((item) =>{
@@ -137,10 +134,9 @@ for (let i = currentQuestion1-1; i < currentQuestion1 + 20; i++) {
       let summ = parseInt(localStorage.getItem('currentPage'))+1
       localStorage.setItem('currentPage',summ)
       let curr = (summ-1) * 20 + 1
-      console.log(curr)
       localStorage.setItem('currentQuestion', curr)
       getAllInfo()
-      window.location.href = "./end.html"
+      // window.location.href = "./end.html"
 
     })
     
@@ -149,7 +145,8 @@ for (let i = currentQuestion1-1; i < currentQuestion1 + 20; i++) {
       break
     }
     else if(i === currentQuestion1-1 + 20){
-      
+      const createdBtn2 = document.createElement("input")
+
     createdBtn2.type = "button"
     createdBtn2.id = `createdBtn-${i + 1}`;
     createdBtn2.classList.add("nextBtn-questions")
@@ -157,11 +154,10 @@ for (let i = currentQuestion1-1; i < currentQuestion1 + 20; i++) {
     createdBtn2.addEventListener("click", (event)=>{
       let summ = parseInt(localStorage.getItem('currentPage'))+1
       localStorage.setItem('currentPage',summ)
-      window.location.href = "./question.html"
       let curr = (summ-1) * 20 + 1
-      console.log(curr)
       localStorage.setItem('currentQuestion', curr)
       getAllInfo()
+      window.location.href = "./question.html"
     })
     
       queMain.appendChild(createdBtn2)
@@ -170,35 +166,33 @@ for (let i = currentQuestion1-1; i < currentQuestion1 + 20; i++) {
       createQuestionBlock(data1,i);
 }
 
-
-let arr = []
-
-function getAllInfo(){
+async function getAllInfo(){
     let arrId = []
     let arrAnsw = []
     const info = {}
     const srr =  document.querySelectorAll('input[type="radio"]:checked')
     srr.forEach((item,index)=>{
-      
-      const answChecked = {}
-      answChecked.id = `${index+parseInt(localStorage.getItem('currentQuestion'))-20}`
-      arrId.push(answChecked.id)
-      answChecked.answer = item.value
-      arrAnsw.push(answChecked.answer)
-      arr.push(answChecked)
+      arrId.push(`${index+parseInt(localStorage.getItem('currentQuestion'))-20}`)
+      arrAnsw.push(item.value)
     })
     info.answerCodeArr = arrAnsw
     info.questionIdArr = arrId
     info.usersId = parseInt(localStorage.getItem('usersId'))
-    console.log(info)
-    // answerCodeArr, questionIdArr, usersId
-    fetch(`http://26.145.60.29:3000/api/user/answer`, {
-      method: "POST",
-      body: JSON.stringify(info),
-      headers:{
-          'Content-Type': 'application/json'
-      },
-  })}
-
-console.log(parseInt(localStorage.getItem("currentQuestion")))
+    letsGo(info)
+    async function letsGo(inform){
+    await  fetch(`http://26.145.60.29:3000/api/user/answer`, {
+        method: "POST",
+        body: JSON.stringify(inform),
+        headers:{
+            'Content-Type': 'application/json'
+        },
+    })
+    .then((data) => {
+      if(data.status === 400){
+        letsGo(info)
+      }
+    })
+    }
+    
+    }
 })

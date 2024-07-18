@@ -16,8 +16,8 @@ function createAdminLogin(event){
     .then(token => {
         console.log(token)
 
-        // if(token.allow !=="")
-        // window.location.href = "./adminPage.html"
+        if(token.allow !=="")
+        window.location.href = "./adminPage.html"
     })
     
     

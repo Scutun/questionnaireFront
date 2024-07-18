@@ -21,7 +21,7 @@ for(key in test)
      
   }
   document.getElementById("admin-email").value
-  
+
 let questionariySelect = ["a","b"]
 const parentSelect = document.getElementById("admin-test-name")
 for (let i = 0; i < questionariySelect.length;i++){
