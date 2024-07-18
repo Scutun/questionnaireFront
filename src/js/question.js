@@ -1,41 +1,11 @@
-const data =[ {
-  "id": "1",
-  "content": "Здоровается, говоря “Привет” или что-то подобное.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "2",
-  "content": "Сплетничает или ябедничает на других детей.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "3",
-  "content": "Сочувствует другим детям, старается помочь и утешить их.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "4",
-  "content": "Иногда говорит “Нет”, когда пристают.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "5",
-  "content": "Немного помогает в домашних делах.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-},
-{
-  "id": "6",
-  "content": "Просит помочь, когда что-нибудь делает.",
-  "headlinename": "Оценка развития ребенка от 14 мес. до 3,5 лет",
-  "titlename": "СОЦИАЛЬНОЕ РАЗВИТИЕ"
-}];
 
-let queAmount = 6
+fetch('http://26.145.60.29:3000/api/question/find')
+.then((data)=> data.json())
+.then((que) => {
+  let data1 = que
+  console.log(data1)
+
+let queAmount = 216
 
 console.log("usersId - "+localStorage.getItem("usersId"))
 
@@ -53,7 +23,7 @@ function createBtn(index){
     let summ = createdBtn.value
     localStorage.setItem('currentPage',summ)
     window.location.href = "./question.html"
-    let curr = (createdBtn.value-1) * 4 + 1
+    let curr = (createdBtn.value-1) * 20 + 1
     console.log(curr)
     localStorage.setItem('currentQuestion', curr)
     getAllInfo()
@@ -61,9 +31,9 @@ function createBtn(index){
 
   queMain.appendChild(createdBtn)
 }
-for(let i = 0; i < Math.ceil(queAmount/4);i++){
-createBtn(i)
-}
+// for(let i = 0; i < Math.ceil(queAmount/20);i++){
+// createBtn(i)
+// }
 var elements = Array.from(document.getElementsByClassName("pageBtn"));
 
 
@@ -80,7 +50,7 @@ if (item.value === localStorage.getItem('currentPage')) {
 //создание вопросов
 const parentElement = document.getElementById("опросник");
 
-function createQuestionBlock(data,i) {
+function createQuestionBlock(data1,i) {
 
   const questionBlock = document.createElement("div");
   
@@ -88,7 +58,7 @@ function createQuestionBlock(data,i) {
 
   const questionText = document.createElement("p");
   questionText.classList.add("question-text");
-  questionText.textContent = localStorage.getItem('currentQuestion')+". " + data[i].content;
+  questionText.textContent = localStorage.getItem('currentQuestion')+". " + data1.getQuestions[i].content;
   let idQue = parseInt(localStorage.getItem('currentQuestion')) + 1
   localStorage.setItem('currentQuestion', idQue)
 
@@ -105,11 +75,12 @@ function createQuestionBlock(data,i) {
     answerDiv.classList.add("radio-btn", "question");
     const input = document.createElement("input");
     input.type = "radio";
-    input.id = `${data[i].id}-${index + 1}`;
+    input.id = `${data1.getQuestions[i].id}-${index + 1}`;
     input.value = index + 1
-    input.name = `question-${data[i].id}`;
+    if(index == 0) input.checked = true
+    input.name = `question-${data1.getQuestions[i].id}`;
     const label = document.createElement("label");
-    label.htmlFor = `${data[i].id}-${index + 1}`;
+    label.htmlFor = `${data1.getQuestions[i].id}-${index + 1}`;
     
 
     const answerText = document.createElement("p");
@@ -127,12 +98,12 @@ function createQuestionBlock(data,i) {
 }
 
 
-
+const createdBtn2 = document.createElement("input")
 
 
 
 let arrayTitle = []
-data.forEach((item) =>{
+data1.getQuestions.forEach((item) =>{
   arrayTitle.push(item.titlename)
 })
 arrayTitle = [...new Set(arrayTitle)]
@@ -151,48 +122,83 @@ function makeTitle(titlename){
 
     createTitle.appendChild(makedTitle)
 }
-makeTitle(data[currentQuestion1].titlename)
+makeTitle(data1.getQuestions[currentQuestion1].titlename)
 // Создаем неограниченное количество блоков
 
-for (let i = currentQuestion1-1; i < currentQuestion1-1 + 4; i++) {
-  if(i === data.length) 
+for (let i = currentQuestion1-1; i < currentQuestion1 + 20; i++) {
+  if(i === data1.getQuestions.length) 
     {
-    const createdBtn2 = document.createElement("input")
+    const createdBtn3 = document.createElement("input")
+    createdBtn3.type = "button"
+    createdBtn3.id = `createdBtn-${i + 1}`;
+    createdBtn3.classList.add("nextBtn-questions")
+    createdBtn3.value = "Завершить опрос"
+    createdBtn3.addEventListener("click",(event)=>{
+      let summ = parseInt(localStorage.getItem('currentPage'))+1
+      localStorage.setItem('currentPage',summ)
+      let curr = (summ-1) * 20 + 1
+      console.log(curr)
+      localStorage.setItem('currentQuestion', curr)
+      getAllInfo()
+      window.location.href = "./end.html"
+
+    })
+    
+    queMain.appendChild(createdBtn3)
+    
+      break
+    }
+    else if(i === currentQuestion1-1 + 20){
+      
     createdBtn2.type = "button"
     createdBtn2.id = `createdBtn-${i + 1}`;
     createdBtn2.classList.add("nextBtn-questions")
     createdBtn2.value = "Далее"
-    createdBtn2.addEventListener("click",(event)=>{
+    createdBtn2.addEventListener("click", (event)=>{
+      let summ = parseInt(localStorage.getItem('currentPage'))+1
+      localStorage.setItem('currentPage',summ)
+      window.location.href = "./question.html"
+      let curr = (summ-1) * 20 + 1
+      console.log(curr)
+      localStorage.setItem('currentQuestion', curr)
       getAllInfo()
-      current = parseInt(localStorage.getItem('currentTitle')) + 1
-      localStorage.setItem('currentTitle',current)
-      console.log(current)
-    
     })
     
-    queMain.appendChild(createdBtn2)
-    
+      queMain.appendChild(createdBtn2)
       break
     }
-  createQuestionBlock(data,i);
-  // let uiuiuoiu = parseInt(localStorage.getItem('queOnPage')) + 1
-  // localStorage.setItem('queOnPage', uiuiuoiu)
-  // console.log(uiuiuoiu)
+      createQuestionBlock(data1,i);
 }
 
 
 let arr = []
+
 function getAllInfo(){
+    let arrId = []
+    let arrAnsw = []
+    const info = {}
     const srr =  document.querySelectorAll('input[type="radio"]:checked')
     srr.forEach((item,index)=>{
+      
       const answChecked = {}
-      answChecked.id = `${index+parseInt(localStorage.getItem('currentQuestion'))-(parseInt(localStorage.getItem("currentPage"))-1)*4}`
+      answChecked.id = `${index+parseInt(localStorage.getItem('currentQuestion'))-20}`
+      arrId.push(answChecked.id)
       answChecked.answer = item.value
+      arrAnsw.push(answChecked.answer)
       arr.push(answChecked)
-      console.log(answChecked)
     })
-    console.log(arr)
-}
+    info.answerCodeArr = arrAnsw
+    info.questionIdArr = arrId
+    info.usersId = parseInt(localStorage.getItem('usersId'))
+    console.log(info)
+    // answerCodeArr, questionIdArr, usersId
+    fetch(`http://26.145.60.29:3000/api/user/answer`, {
+      method: "POST",
+      body: JSON.stringify(info),
+      headers:{
+          'Content-Type': 'application/json'
+      },
+  })}
 
 console.log(parseInt(localStorage.getItem("currentQuestion")))
-let blocksAmount 
+})

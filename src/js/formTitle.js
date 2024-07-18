@@ -257,7 +257,7 @@ function createFormTtile(event){
         localStorage.setItem('currentQuestion', 1)
         localStorage.setItem('currentTitle', 1)
         localStorage.setItem('queOnPage', 1)
-        // window.location.href ='./question.html'
+        window.location.href ='./question.html'
     })
 }
 
